@@ -17,19 +17,19 @@ class CartModal extends Component {
                 <Modal.Body>
                     <ListGroup as="ul">
                         <ListGroup.Item as="li">
-                            <div class="d-flex w-100 justify-content-between">
+                            <div className="d-flex w-100 justify-content-between">
                                 <h5>Item 1</h5>
                                 <Button variant="danger">Remove</Button>
                             </div>
                         </ListGroup.Item>
                         <ListGroup.Item as="li">
-                            <div class="d-flex w-100 justify-content-between">
+                            <div className="d-flex w-100 justify-content-between">
                                 <h5>Item 2</h5>
                                 <Button variant="danger">Remove</Button>
                             </div>
                         </ListGroup.Item>
                         <ListGroup.Item as="li">
-                            <div class="d-flex w-100 justify-content-between">
+                            <div className="d-flex w-100 justify-content-between">
                                 <h5>Item 3</h5>
                                 <Button variant="danger">Remove</Button>
                             </div>

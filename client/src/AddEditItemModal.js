@@ -23,7 +23,14 @@ class AddEditItemModal extends Component {
                                 Item Image
                             </Form.Label>
                             <Col sm={10}>
+                            {this.props.currentItem ? (
+                                <div>
+                                    <img src={this.props.currentItem.itemImage} width="100" alt="Item"/>
+                                    <Form.Control type="file" required />
+                                </div>
+                            ) : (
                                 <Form.Control type="file" required />
+                            )}
                             </Col>
                         </Form.Group>
 
@@ -32,7 +39,7 @@ class AddEditItemModal extends Component {
                                 Item Name
                             </Form.Label>
                             <Col sm={10}>
-                                <Form.Control type="text" required />
+                                <Form.Control type="text" required value={this.props.currentItem ? this.props.currentItem.itemName : ''} />
                             </Col>
                         </Form.Group>
 
@@ -41,7 +48,7 @@ class AddEditItemModal extends Component {
                                 Item Description
                             </Form.Label>
                             <Col sm={10}>
-                                <Form.Control as="textarea" rows="3"/>
+                                <Form.Control as="textarea" rows="3" value={this.props.currentItem ? this.props.currentItem.itemDesc : ''}/>
                             </Col>
                         </Form.Group>
 
@@ -50,7 +57,7 @@ class AddEditItemModal extends Component {
                                 Item Price
                             </Form.Label>
                             <Col sm={10}>
-                                <Form.Control type="text" required />
+                                <Form.Control type="text" required value={this.props.currentItem ? this.props.currentItem.itemDesc : ''} />
                             </Col>
                         </Form.Group>
 
