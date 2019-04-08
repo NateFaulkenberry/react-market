@@ -10,7 +10,9 @@ class AddEditItemModal extends Component {
     render() {
         return (
             <Modal
-                {...this.props}
+                backdrop="static"
+                show={this.props.show}
+                onHide={this.props.onHide}
                 size="lg"
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
@@ -26,7 +28,7 @@ class AddEditItemModal extends Component {
                             {this.props.currentItem ? (
                                 <div>
                                     <img src={this.props.currentItem.itemImage} width="100" alt="Item"/>
-                                    <Form.Control type="file" required />
+                                    <Form.Control type="file" />
                                 </div>
                             ) : (
                                 <Form.Control type="file" required />
@@ -39,7 +41,7 @@ class AddEditItemModal extends Component {
                                 Item Name
                             </Form.Label>
                             <Col sm={10}>
-                                <Form.Control type="text" required value={this.props.currentItem ? this.props.currentItem.itemName : ''} />
+                                <Form.Control type="text" required defaultValue={this.props.currentItem ? this.props.currentItem.itemName : ''} />
                             </Col>
                         </Form.Group>
 
@@ -48,7 +50,7 @@ class AddEditItemModal extends Component {
                                 Item Description
                             </Form.Label>
                             <Col sm={10}>
-                                <Form.Control as="textarea" rows="3" value={this.props.currentItem ? this.props.currentItem.itemDesc : ''}/>
+                                <Form.Control as="textarea" rows="3" required defaultValue={this.props.currentItem ? this.props.currentItem.itemDesc : ''}/>
                             </Col>
                         </Form.Group>
 
@@ -57,7 +59,7 @@ class AddEditItemModal extends Component {
                                 Item Price
                             </Form.Label>
                             <Col sm={10}>
-                                <Form.Control type="text" required value={this.props.currentItem ? this.props.currentItem.itemDesc : ''} />
+                                <Form.Control type="text" required defaultValue={this.props.currentItem ? this.props.currentItem.itemPrice : ''} />
                             </Col>
                         </Form.Group>
 

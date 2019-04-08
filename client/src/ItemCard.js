@@ -25,7 +25,7 @@ class ItemCard extends Component {
                 ) : (
                     <ButtonToolbar>
                         <Button variant="primary" className="mr-2" onClick={() => this.props.addEditItem(true, 'Edit')}>Edit Item</Button>
-                        <Button variant="danger">Delete Item</Button>
+                        <Button variant="danger" onClick={() => this.props.deleteItem()}>Delete Item</Button>
                     </ButtonToolbar>
                 )}
                     </ButtonToolbar>
